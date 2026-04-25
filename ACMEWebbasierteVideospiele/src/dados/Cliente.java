@@ -5,13 +5,13 @@ public abstract class Cliente{
     private int numero;
     private String nome;
     private String email;
-    ArrayList<Contrato> contrato;
+  //  ArrayList<Contrato> contrato;
 
-    public Cliente(int numero, String nome, String email, ArrayList<Contrato> contrato) {
+    public Cliente(int numero, String nome, String email) {
         this.numero = numero;
         this.nome = nome;
         this.email = email;
-        this.contrato = new ArrayList<Contrato>();
+     //   this.contrato = new ArrayList<Contrato>();
     }
 
     public int getNumero() {
@@ -38,14 +38,17 @@ public abstract class Cliente{
         this.email = email;
     }
 
-    public Contrato getContrato() {
-        return this.contrato;
-    }
+  //  public Contrato getContrato() {
+      //  return this.contrato;
+    //}
 
-    public void setContrato(ArrayList<Contrato> contrato) {
-        this.contrato = contrato;
-    }
-    public boolean verify(int num){
+   // public void setContrato(ArrayList<Contrato> contrato) {
+     //   this.contrato = contrato;
+    //}
+
+    public abstract String descrever();
+
+    /*public boolean verify(int num){
         Cliente cliente;
         if(cliente.num = num){
             return false;
@@ -53,7 +56,7 @@ public abstract class Cliente{
         else{
             return true;
         }
-    }
+    }*/
     
 }
 

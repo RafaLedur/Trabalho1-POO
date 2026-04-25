@@ -9,4 +9,8 @@ public class Corporativo extends Cliente{
         this.cnpj = cnpj;
         nomefantasia = nomeF;
     }
+    @Override
+    public String descrever() {
+        return getNumero()+ ";" +getNome()+ ";" +getEmail()+ ";" +cnpj+ ";" +nomefantasia;
+    }
 }
