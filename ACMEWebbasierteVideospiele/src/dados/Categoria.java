@@ -5,10 +5,10 @@ public enum Categoria{
     ESTRATEGIA("ESTRATEGIA"),
     CORRIDA("CORRIDA");
 
-    private String dia;
+    private String cat;
 
-    private Categoria(String dia){
-        this.dia = dia;
+    private Categoria(String cat){
+        this.cat = cat;
     }
     
 }

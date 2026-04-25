@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class ACMESpiele {
 
     private ArrayList<Cliente> clientes = new ArrayList<>();
+    private ArrayList<Jogo> jogo = new ArrayList<>();
 
     public void executar() {
         Scanner in = new Scanner(System.in);
@@ -27,6 +28,8 @@ public class ACMESpiele {
                 case 2: 
                     cadastrarClienteCNPJ(in);
                     break;
+                case 3:
+
                 case 0: 
                     System.out.println("Aplicação encerrada");
                 default:
@@ -45,6 +48,20 @@ public class ACMESpiele {
         return false;
     }
 
+    public boolean jogoExiste(int numero){
+        for(Jogo j : jogo){
+            if(j.getCodigo() == numero){
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean categoriaExiste(String cat){
+        for(Categoria g : cat){
+            if()
+        }
+    }
+
     public void cadastrarClienteCPF(Scanner in) {
         System.out.print("Numero: ");
         int numero = in.nextInt();
@@ -56,9 +73,11 @@ public class ACMESpiele {
 
         System.out.print("Nome: ");
         String nome = in.nextLine();
+        in.nextLine();
 
         System.out.print("Email: ");
         String email = in.nextLine();
+        in.nextLine();
 
         System.out.print("CPF: ");
         String cpf = in.nextLine();
@@ -84,6 +103,7 @@ public class ACMESpiele {
 
         System.out.print("Email: ");
         String email = in.nextLine();
+        in.nextLine();
 
         System.out.print("CNPJ: ");
         String cnpj = in.nextLine();
@@ -96,5 +116,16 @@ public class ACMESpiele {
         clientes.add(cli);
 
         System.out.println("Cliente cadastrado: " + cli.descrever());
+    }
+
+    public void cadastraJogo(Scanner in){
+        System.out.print("Código: ");
+        int cod = in.nextInt();
+
+        if (jogoExiste(cod)) {
+            System.out.println("Erro: erro-codigo repetido.");
+            return;
+        }
+        System
     }
 }
