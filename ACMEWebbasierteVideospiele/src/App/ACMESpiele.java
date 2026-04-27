@@ -29,7 +29,8 @@ public class ACMESpiele {
                     cadastrarClienteCNPJ(in);
                     break;
                 case 3:
-
+                    cadastraJogo(in);
+                    break;
                 case 0: 
                     System.out.println("Aplicação encerrada");
                 default:
@@ -57,9 +58,13 @@ public class ACMESpiele {
         return false;
     }
     public boolean categoriaExiste(String cat){
-        for(Categoria g : cat){
-            if()
+        if (jogoExiste() == false){
+            if(Categoria.getCategoria().equals(cat)){
+                return true;
+            }
+
         }
+        return false;
     }
 
     public void cadastrarClienteCPF(Scanner in) {
@@ -126,6 +131,26 @@ public class ACMESpiele {
             System.out.println("Erro: erro-codigo repetido.");
             return;
         }
-        System
+        System.out.print("Nome: ");
+        String nome = in.nextLine();
+        in.nextLine();
+
+        System.out.print("Ano: ");
+        int ano = in.nextInt();
+        in.nextLine();
+
+        System.out.print("Valor minuto: ");
+        double vMin = in.nextDouble();
+        in.nextLine();
+
+        System.out.print("Categoria: ");
+        String cat = in.nextLine();
+        in.nextLine();
+
+        if(categoriaExiste(cat)){
+            Sytem.out.println("erro-categoria inexistente.");
+            return;
+        }
+        
     }
 }
