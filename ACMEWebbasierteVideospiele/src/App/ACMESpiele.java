@@ -16,6 +16,7 @@ public class ACMESpiele {
         while (opt != 0) {
             System.out.println("\n[1] Cadastrar cliente individual");
             System.out.println("[2] Cadastrar cliente corporativo");
+            System.out.println("[3] Cadastrar jogo ");
             System.out.println("[0] Sair");
             System.out.print("Opcao: ");
 
@@ -148,8 +149,10 @@ public class ACMESpiele {
         in.nextLine();
 
         if(categoriaExiste(cat)){
-            Sytem.out.println("erro-categoria inexistente.");
+            System.out.println("erro-categoria inexistente.");
             return;
+        }else{
+            System.out.println(cod+ ";" +nome+ ";" +ano+ ";" +vMin+ ";" +cat);
         }
         
     }
