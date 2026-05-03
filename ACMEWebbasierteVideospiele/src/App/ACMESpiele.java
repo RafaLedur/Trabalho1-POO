@@ -59,13 +59,12 @@ public class ACMESpiele {
         return false;
     }
     public boolean categoriaExiste(String cat){
-        if (jogoExiste() == false){
-            if(Categoria.getCategoria().equals(cat)){
-                return true;
-            }
-
+    for (Categoria c : Categoria.values()) {
+        if (c.name().equalsIgnoreCase(cat)) {
+            return true;
         }
-        return false;
+    }
+    return false;
     }
 
     public void cadastrarClienteCPF(Scanner in) {
@@ -148,12 +147,16 @@ public class ACMESpiele {
         String cat = in.nextLine();
         in.nextLine();
 
-        if(categoriaExiste(cat)){
-            System.out.println("erro-categoria inexistente.");
-            return;
-        }else{
-            System.out.println(cod+ ";" +nome+ ";" +ano+ ";" +vMin+ ";" +cat);
+        if (!categoriaExiste(cat)) {
+        System.out.println("erro-categoria inexistente.");
+        return;
         }
+        Categoria categoria = Categoria.valueOf(cat.toUpperCase());
+
+            System.out.println(cod+ ";" +nome+ ";" +ano+ ";" +vMin+ ";" +cat);
         
+        Jogo j = new Jogo(cod, nome, ano, vMin, categoria);
+        jogo.add(j);
+       
     }
 }
