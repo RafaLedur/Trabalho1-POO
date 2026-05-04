@@ -8,6 +8,7 @@ public class ACMESpiele {
 
     private ArrayList<Cliente> clientes = new ArrayList<>();
     private ArrayList<Jogo> jogo = new ArrayList<>();
+    private ArrayList<Contrato> contrato = new ArrayList<>();
 
     public void executar() {
         Scanner in = new Scanner(System.in);
@@ -158,5 +159,12 @@ public class ACMESpiele {
         Jogo j = new Jogo(cod, nome, ano, vMin, categoria);
         jogo.add(j);
        
+    }
+    public void cadastraContrato(Scanner in){
+        System.out.println("ID: ");
+        int id = in.nextInt();
+        
+        for()
+
     }
 }
