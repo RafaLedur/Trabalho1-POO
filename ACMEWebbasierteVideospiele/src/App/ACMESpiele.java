@@ -60,13 +60,22 @@ public class ACMESpiele {
         return false;
     }
     public boolean categoriaExiste(String cat){
-    for (Categoria c : Categoria.values()) {
-        if (c.name().equalsIgnoreCase(cat)) {
+        for (Categoria c : Categoria.values()) {
+            if (c.name().equalsIgnoreCase(cat)) {
             return true;
         }
     }
     return false;
     }
+    public boolean contratoExiste(int id){
+        for(Contrato t : contrato){
+             if(t.getID() == id){
+                return true;
+             }
+        }
+        
+        return false;
+}
 
     public void cadastrarClienteCPF(Scanner in) {
         System.out.print("Numero: ");
@@ -164,7 +173,14 @@ public class ACMESpiele {
         System.out.println("ID: ");
         int id = in.nextInt();
         
-        for()
+        if(jogoExiste(cod)){
+            System.out.println("erro-id repetido.");
+            return;
+            
+        }
+        
+
+
 
     }
 }
