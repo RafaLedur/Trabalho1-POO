@@ -67,15 +67,27 @@ public class ACMESpiele {
     }
     return false;
     }
-    public boolean contratoExiste(int id){
+    public void contratoExiste(int id){
         for(Contrato t : contrato){
              if(t.getID() == id){
-                return true;
+                System.out.println("erro-id repetido.");
+             }
+             else if(t.getCliente().getNumero() == -1){
+                System.out.println("erro-cliente inexistente.");
+             }
+             else if(t.getJogo().getCodigo() == -1){
+                System.out.println("erro-jogo inexistente.");
              }
         }
         
-        return false;
+        null;
 }
+    public boolean clienteContratoExiste(){
+        for(Cliente c : contrato){
+            if(contrato.getCliente().getNumero() == )
+        }
+    }
+
 
     public void cadastrarClienteCPF(Scanner in) {
         System.out.print("Numero: ");
@@ -173,11 +185,12 @@ public class ACMESpiele {
         System.out.println("ID: ");
         int id = in.nextInt();
         
-        if(jogoExiste(cod)){
+        if(jogoExiste(id) == null){
             System.out.println("erro-id repetido.");
             return;
-            
         }
+        
+        
         
 
 
